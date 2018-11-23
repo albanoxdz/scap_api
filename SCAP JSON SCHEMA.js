@@ -3,24 +3,45 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "SCAP",
   "type": "object",
-  "properties": {
-    "TINPA": {
-      "type": "array",
-      "description": "The person's first name."
+"properties": {
+	"TINPA": {
+		"type": "object",
+		"minItems": 50,
+		"maxItems": 50,
+		"items": [
+			{
+			"type": "number"
+			},
+			{
+			"type": "string"
+			},
+			{
+			"type": "string",
+			"enum": ["Street", "Avenue", "Boulevard"]
+			},
+			{
+			"type": "string",
+			"enum": ["NW", "NE", "SW", "SE"]
+			}
+			],
+		"additionalItems": false
     },
     "TINPN": {
       "type": "array",
-      "description": "The person's last name."
+        "minItems": 50,
+  	"maxItems": 50
     },
     "TOUTA": {
       "description": "Age in years which must be equal to or greater than zero.",
       "type": "array",
-      "minimum": 0
+      "minItems": 50,
+      "maxItems": 50
     }
-	"TOUTN": {
+    "TOUTN": {
       "description": "Age in years which must be equal to or greater than zero.",
       "type": "array",
-      "minimum": 0
+      "minItems": 50,
+      "maxItems": 50
     }
   }
 }
